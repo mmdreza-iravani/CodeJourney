@@ -13,7 +13,7 @@ def main():
 
 	explanation(DIGITS_NUM, CHANCES)
 
-	choose_number()
+	choose_number(DIGITS_NUM)
 
 	take_guess(CHANCES, DIGITS_NUM)
 
@@ -34,12 +34,12 @@ When I say:  /   That means:
 
 
 
-def choose_number():
+def choose_number(DIGITS_NUM):
 	# Let the computer choose a random {digits_num} digits numebr
 	numbers = list('1234567890')
 	random.shuffle(numbers)
 
-	secret_number = numbers[:3]
+	secret_number = numbers[:DIGITS_NUM]
 	print("I have thought up a number.")
 	return secret_number
 
@@ -48,7 +48,7 @@ def choose_number():
 def take_guess(CHANCES, DIGITS_NUM):
 	# Take guesses from the user
 	print(f"You have {CHANCES} guesses to get it.")
-	number_in_list = choose_number()
+	number_in_list = choose_number(DIGITS_NUM)
 	secret_number = ''.join(number_in_list)
 
 	tries = 0
@@ -114,7 +114,7 @@ def play_again():
 	while True:
 		ask_continue = input("DO you wanna play again? ").lower()
 
-		if 'yes' in ask_continue.split() or ask_continue in ['y', 'yepp', 'sure', 'of course']:
+		if 'yes' in ask_continue.split() or ask_continue in ['y', 'sure', 'of course']:
 			main()
 
 
@@ -128,6 +128,5 @@ def play_again():
 # --- main program ---
 
 main()
-
 
 
