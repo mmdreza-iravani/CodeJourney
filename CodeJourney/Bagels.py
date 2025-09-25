@@ -114,7 +114,7 @@ def play_again():
 	while True:
 		ask_continue = input("DO you wanna play again? ").lower()
 
-		if 'yes' in ask_continue.split() or ask_continue in ['y', 'sure', 'of course']:
+		if 'yes' in ask_continue.split() or ask_continue in ['y', 'yepp', 'sure', 'of course']:
 			main()
 
 
@@ -128,5 +128,6 @@ def play_again():
 # --- main program ---
 
 main()
+
 
 
